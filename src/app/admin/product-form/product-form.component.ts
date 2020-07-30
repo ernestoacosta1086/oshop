@@ -9,7 +9,7 @@ import 'rxjs/add/operator/take';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css'],
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
   categories$;
   product = {};
   id;
@@ -32,5 +32,11 @@ export class ProductFormComponent implements OnInit {
     this.router.navigate(['/admin/products']);
   }
 
-  ngOnInit() {}
+  delete() {
+    if(!confirm('Are you sure you want delete tis product?')) return;
+
+    this.productService.delete(this.id);
+    this.router.navigate(['/admin/products']);
+    }
 }
+
