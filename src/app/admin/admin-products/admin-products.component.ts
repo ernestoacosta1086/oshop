@@ -11,20 +11,16 @@ import { DataTableResource } from 'angular5-data-table';
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
   products: Product[];
-  filteredProducts: any[];
   subscription: Subscription;
   tableResource: DataTableResource<Product>;
   items: Product[] = [];
   itemCount: number;
 
   constructor(private productService: ProductService) {
-    this.subscription = this.productService
-      .getAll()
-      .subscribe(
-        products => {
-          this.filteredProducts = this.products = products;
-          this.initializeTable(products);
-        });
+    this.subscription = this.productService.getAll().subscribe((products) => {
+      this.products = products;
+      this.initializeTable(products);
+    });
   }
 
   ngOnDestroy() {
@@ -32,28 +28,30 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   }
 
   filter(query: string) {
-    this.filteredProducts = query
-      ? this.products.filter(p =>
+    let filteredProducts = query
+      ? this.products.filter((p) =>
           p.title.toLowerCase().includes(query.toLowerCase())
-      )
+        )
       : this.products;
 
-    this.initializeTable(this.filteredProducts);
+    this.initializeTable(filteredProducts);
+
   }
 
   private initializeTable(products: Product[]) {
-    this.tableResource = new DataTableResource(this.products);
-        this.tableResource.query({ offset: 0 })
-          .then(items => this.items = items);
-        this.tableResource.count()
-          .then(count => this.itemCount = count);
+    this.tableResource = new DataTableResource(products);
+    this.tableResource
+      .query({ offset: 0 })
+      .then((items) => (this.items = items));
+    this.tableResource.count().then((count) => (this.itemCount = count));
+
   }
 
   reloadItems(params) {
-    if(!this.tableResource) return;
+    if (!this.tableResource) return;
 
-    this.tableResource.query(params)
-          .then(items => this.items = items);
+    this.tableResource.query(params).then((items) => (this.items = items));
+
   }
 
   ngOnInit() {}
