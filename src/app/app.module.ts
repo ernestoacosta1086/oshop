@@ -56,7 +56,7 @@ import { DataTableModule } from 'angular5-data-table';
     DataTableModule.forRoot(),
     CustomFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shoping-cart', component: ShopingCartComponent },
       { path: 'login', component: LoginComponent },
