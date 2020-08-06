@@ -29,7 +29,7 @@ import { CategoryService } from './category.service';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation';
-
+import { DataTableModule } from 'angular5-data-table';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { CustomFormsModule } from 'ng2-validation';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +53,7 @@ import { CustomFormsModule } from 'ng2-validation';
     AngularFireAuthModule,
     NgbModule,
     FormsModule,
+    DataTableModule.forRoot(),
     CustomFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
