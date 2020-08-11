@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class ProductFilterComponent {
   categories$;
-  @Input('category') category;
+  @Input() category;
 
   constructor(categoryService: CategoryService) {
     this.categories$ = categoryService.getAll();
