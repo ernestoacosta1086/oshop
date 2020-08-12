@@ -33,11 +33,19 @@ export class ShoppingCartService {
     return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
 
-  async addToCart(product: Product) {
+  addToCart(product: Product) {
+    this.updateItemQuantity(product, 1);
+  }
+
+  removeFromCart (product: Product) {
+    this.updateItemQuantity(product, -1);
+  }
+
+  private async updateItemQuantity(product: Product, change: number) {
     let cartId = await this.getOrCreateCartId();
     let item$ = this.getItem(cartId, product.$key);
     item$.take(1).subscribe((item: any) => {
-      item$.update({ product: product, quantity: (item.quantity || 0) + 1 });
+      item$.update({ product: product, quantity: (item.quantity || 0) + change });
     });
   }
 }
