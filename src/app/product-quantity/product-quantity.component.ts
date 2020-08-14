@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from '../models/product';
 import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCart } from '../models/shopping-cart';
 
 @Component({
   selector: 'app-product-quantity',
@@ -8,7 +9,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
   styleUrls: ['./product-quantity.component.css'],
 })
 export class ProductQuantityComponent {
-  @Input() product: Product;
+  @Input('product') product: Product;
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
 

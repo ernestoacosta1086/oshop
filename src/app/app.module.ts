@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
-import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
@@ -41,7 +41,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     BsNavbarComponent,
     HomeComponent,
     ProductsComponent,
-    ShopingCartComponent,
+    ShoppingCartComponent,
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
@@ -65,7 +65,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
-      { path: 'shoping-cart', component: ShopingCartComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
 
       {
