@@ -6,8 +6,8 @@
     <thead>
       <tr>
         <th>Product</th>
-        <th>Quantity</th>
-        <th>Price</th>
+        <th class="text-center" style="width: 230px;">Quantity</th>
+        <th class="text-right" style="width: 200px;">Price</th>
       </tr>
     </thead>
     <tbody>
@@ -19,14 +19,14 @@
             [shopping-cart]="cart"
           ></app-product-quantity>
         </td>
-        <td>{{ item.totalPrice | currency: "USD":true }}</td>
+        <td class="text-right">{{ item.totalPrice | currency: "USD":true }}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <th>Total</th>
         <th></th>
-        <th>{{ cart.totalPrice | currency: "USD":true }}</th>
+        <th class="text-right">{{ cart.totalPrice | currency: "USD":true }}</th>
       </tr>
     </tfoot>    
   </table>
