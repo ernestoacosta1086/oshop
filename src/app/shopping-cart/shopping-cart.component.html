@@ -28,6 +28,8 @@
         <th></th>
         <th>{{ cart.totalPrice | currency: "USD":true }}</th>
       </tr>
-    </tfoot>
+    </tfoot>    
   </table>
+  <button (click) = "clearCart()"
+  class="btn btn-danger btn-sm">Clean Shopping Cart</button>
 </ng-container>
