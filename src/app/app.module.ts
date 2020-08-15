@@ -75,7 +75,7 @@ import { OrderService } from './order.service';
         canActivate: [AuthGuard],
       },
       {
-        path: 'order-success',
+        path: 'order-success/:id',
         component: OrderSuccessComponent,
         canActivate: [AuthGuard],
       },
