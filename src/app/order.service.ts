@@ -17,7 +17,7 @@ export class OrderService {
     return result;
   }
 
-  getOrders() { 
+  getOrders() {
     return this.db.list('/orders');
   }
 
