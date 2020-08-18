@@ -84,7 +84,7 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
         canActivate: [AuthGuard],
       },
       {
-        path: 'my/order',
+        path: 'my/orders',
         component: MyOrdersComponent,
         canActivate: [AuthGuard],
       },
